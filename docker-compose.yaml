@@ -1,0 +1,10 @@
+services:
+  luma-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Optional. No proxy needed: Luma answers your own connection.
+      # - LUMA_PROXY=http://user:pass@host:port
